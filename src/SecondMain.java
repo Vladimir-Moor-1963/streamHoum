@@ -9,6 +9,7 @@ public class SecondMain {
         System.out.println("Введите кол.  строк");
         int namberString = Integer.parseInt(scanner.nextLine());
         System.out.println("Введите строки");
+        strings.add(String.valueOf(scanner.nextInt()));
         List<Integer> str = strings.stream()
                 .map(strg -> strg.length())
                 .filter(integer -> integer>=15)

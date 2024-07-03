@@ -14,11 +14,11 @@ public class SecondMain {
         for (int i = 0; i < namberString; i++) {
             strings.add(scanner.nextLine());
         }
-        List<Integer> lengths = strings.stream()
+        List<String> lengths = strings.stream()
 
 
-                .map(String::length)
-                .filter(length -> length >= 15)
+
+                .filter(str ->str.length()>=15)
                 .collect(Collectors.toList());
         System.out.println(lengths);
 

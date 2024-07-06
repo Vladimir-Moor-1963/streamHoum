@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -14,12 +15,14 @@ public class SecondMain {
         for (int i = 0; i < namberString; i++) {
             strings.add(scanner.nextLine());
         }
-        List<String> lengths = strings.stream()
+        Optional<String> lengths = strings.stream()
 
 
 
-                .filter(str ->str.length()>=15)
-                .collect(Collectors.toList());
+                .filter(str ->str.length()<=15)
+                        .max(String::lastIndexOf);
+                //.collect(Collectors.toList());
+
         System.out.println(lengths);
 
     }

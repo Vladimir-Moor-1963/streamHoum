@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,13 +13,16 @@ public class Main {
         }
         System.out.println(numbers);
 
-        List<Integer> newNambers = numbers.stream()
+        List<Integer> newNambers = Collections.singletonList(numbers.stream()
                 .map(x -> x + 15)
-                .filter(x-> x >50)
-                .toList();
+                .filter(x -> x > 50)
+                .reduce((x, y) -> x + y)
+                .orElse(0));
+
+               // .toList();
         System.out.println(newNambers);
 
-    Object sum = newNambers.stream().reduce((x, y) -> x + y);
-        System.out.println(sum);
+  // Object sum = newNambers.stream().reduce((x, y) -> x + y);
+  //     System.out.println(sum);
 }
 }
